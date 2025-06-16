@@ -1,0 +1,11 @@
+{
+    "check_date": true,
+
+    "executions": [
+        {
+            "command": "esbuild <S --bundle --outfile=<d",
+            "maps": [{"sources": ["src/*.ts"], "destinations": ["public/"]}],
+            "to": "js"
+        }
+    ]
+}

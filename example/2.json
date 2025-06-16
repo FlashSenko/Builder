@@ -1,0 +1,17 @@
+{
+    "check_date": true,
+
+    "executions": [
+        {
+            "command": "go build -o <d <S",
+            "maps": ["1"]
+        }
+    ],
+
+    "maps_dict": {
+        "1": {
+            "sources": ["../pkg/utils/"],
+            "destinations": ["public/success.exe", "src/success.exe"]
+        }
+    }
+}
