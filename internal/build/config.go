@@ -82,8 +82,17 @@ func (e *Execution) SourcesIter(config *Config) func(yield func(string, error) b
 				}
 
 				matches, err := filepath.Glob(source)
+				if err != nil {
+					yield("", err)
+					return
+				}
 
 				for _, path := range matches {
+					isDir, err = utils.IsDir(path)
+					if isDir {
+						continue
+					}
+
 					if !yield(path, err) {
 						return
 					}
